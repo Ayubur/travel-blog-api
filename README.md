@@ -24,13 +24,12 @@ Travel Blog API built with NestJS, PostgreSQL, JWT, and bcrypt.
 
 Create a `.env` file:
 
-DB_HOST=localhost
-DB_PORT=5432
-DB_USERNAME=ayubur
-DB_PASSWORD=pass1234
-DB_NAME=travel_blog
-
-ACCESS_SECRET=ACCESS_SECRET
+DB_HOST=localhost<br>
+DB_PORT=5432<br>
+DB_USERNAME=ayubur<br>
+DB_PASSWORD=pass1234<br>
+DB_NAME=travel_blog<br>
+ACCESS_SECRET=ACCESS_SECRET<br>
 REFRESH_SECRET=ACCESS_SECRET
 
 
