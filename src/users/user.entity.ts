@@ -1,7 +1,9 @@
+import { Blog } from 'src/blogs/blog.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -19,6 +21,9 @@ export class User {
 
   @Column()
   name!: string;
+
+  @OneToMany(() => Blog, (blog) => blog.author)
+  blogs!: Blog[];
 
   @Column({ nullable: true, type: 'text' })
   refreshToken!: string | null;

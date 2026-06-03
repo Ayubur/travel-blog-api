@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { User } from './users/user.entity';
+import { BlogsModule } from './blogs/blogs.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { User } from './users/user.entity';
       autoLoadEntities: true,
       synchronize: true,
     }),
+    BlogsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
