@@ -45,9 +45,18 @@ npm run start:dev
 
 ## API Endpoints
 
+### Health Check
+
+- GET /api/health
+
 ### Auth
 
 - POST /api/auth/register
 - POST /api/auth/login
 - POST /api/auth/refresh
 - POST /api/auth/logout
+
+### Blog Post
+
+- POST /api/blogs
+- GET  /api/blogs?page=1&limit=10
