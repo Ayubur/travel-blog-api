@@ -1,7 +1,16 @@
-import { Body, Controller, Post, Req, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Query,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { BlogsService } from './blogs.service';
 import { JwtAuthGuard } from 'src/common/guard/JwtAuthGuard';
 import { CreateBlogDto } from './dto/create-blog.dto';
+import { PaginationDto } from './dto/pagination.dto';
 
 @Controller('api/blogs')
 export class BlogsController {
@@ -9,7 +18,13 @@ export class BlogsController {
 
   @Post()
   @UseGuards(JwtAuthGuard)
-  create(@Body() dto: CreateBlogDto, @Req() req: any) {
-    return this.blogService.create(dto, req.user.id);
+  createBlog(@Body() dto: CreateBlogDto, @Req() req: any) {
+    return this.blogService.createBlog(dto, req.user.id);
+  }
+
+  @Get()
+  @UseGuards(JwtAuthGuard)
+  getBlogs(@Query() query: PaginationDto) {
+    return this.blogService.getBlogs(query);
   }
 }
