@@ -8,6 +8,7 @@ import { UsersModule } from './users/users.module';
 import { User } from './users/user.entity';
 import { BlogsModule } from './blogs/blogs.module';
 import { HealthModule } from './health/health.module';
+import { Blog } from './blogs/blog.entity';
 
 @Module({
   imports: [
@@ -21,7 +22,7 @@ import { HealthModule } from './health/health.module';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [User],
+      entities: [User, Blog],
       autoLoadEntities: true,
       synchronize: true,
     }),
